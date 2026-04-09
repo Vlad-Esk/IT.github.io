@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путеводитель по IT-профессиям</title>
+    <title>Путеводитель по IT-професиям»</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #4A6FA5;
-            --primary-blue-light: #6B8DC3;
-            --primary-blue-dark: #3A5A8C;
-            --accent-green: #5CB85C;
-            --accent-green-light: #7ED47E;
-            --gray-light: #F8F9FA;
-            --gray-medium: #E9ECEF;
-            --gray-dark: #6C757D;
+            --primary-blue: #4a6fa5;
+            --primary-blue-light: #6b8cbc;
+            --primary-blue-dark: #3a5784;
+            --accent-green: #5a9b7d;
+            --accent-green-light: #7ab89a;
+            --gray-light: #f8f9fa;
+            --gray-medium: #e9ecef;
+            --gray-dark: #6c757d;
             --text-primary: #212529;
             --text-secondary: #495057;
-            --white: #FFFFFF;
-            --border-radius: 16px;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow-hover: rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
             --transition: all 0.3s ease;
         }
 
@@ -50,105 +51,133 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
             color: var(--white);
-            padding: 60px 0;
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
-            margin-bottom: 60px;
-        }
-
-        .header-content {
+            padding: 60px 0 40px;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px var(--shadow);
         }
 
-        h1 {
-            font-size: 3.5rem;
+        .logo {
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
-        .subtitle {
-            font-size: 1.4rem;
+        .logo span {
+            color: var(--accent-green-light);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
             font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 30px;
             opacity: 0.9;
-            margin-bottom: 30px;
         }
 
         /* Navigation */
-        .nav-tabs {
+        .nav-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .nav-list {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            list-style: none;
             gap: 10px;
-            margin-bottom: 50px;
-            padding: 0 20px;
         }
 
-        .nav-tab {
-            background: var(--white);
-            color: var(--primary-blue);
-            padding: 14px 28px;
-            border-radius: 50px;
+        .nav-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 15px;
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
             text-decoration: none;
+            color: var(--text-primary);
             font-weight: 600;
-            font-size: 1.1rem;
             transition: var(--transition);
+            text-align: center;
             border: 2px solid transparent;
-            box-shadow: var(--shadow);
         }
 
-        .nav-tab:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-green);
+        .nav-link:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-hover);
+            border-color: var(--primary-blue);
         }
 
-        .nav-tab.active {
-            background: var(--accent-green);
+        .nav-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .nav-link:hover .nav-icon {
             color: var(--white);
         }
 
-        /* Section */
+        /* Main Content */
+        main {
+            padding-bottom: 60px;
+        }
+
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 70px;
             scroll-margin-top: 30px;
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
             border-bottom: 2px solid var(--gray-medium);
         }
 
         .section-icon {
-            font-size: 2.5rem;
-            background: var(--primary-blue);
-            color: var(--white);
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-right: 20px;
+            background-color: var(--gray-light);
             width: 70px;
             height: 70px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--primary-blue-dark);
         }
 
         .section-description {
             font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 30px;
-            max-width: 800px;
+            margin-top: 10px;
+            font-weight: 400;
         }
 
         /* Professions Grid */
@@ -156,153 +185,182 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .profession-card {
-            background: var(--white);
+            background-color: var(--white);
             border-radius: var(--border-radius);
             padding: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px var(--shadow);
             transition: var(--transition);
             border: 1px solid var(--gray-medium);
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .profession-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-green-light);
-        }
-
-        .profession-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--accent-green);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow-hover);
+            border-color: var(--primary-blue-light);
         }
 
         .profession-number {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-blue);
+            display: inline-block;
+            background-color: var(--accent-green);
             color: var(--white);
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 1.1rem;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
 
-        h3 {
+        .profession-title {
             font-size: 1.6rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-blue-dark);
             margin-bottom: 15px;
-            padding-right: 50px;
+            line-height: 1.3;
         }
 
-        .profession-role {
-            color: var(--accent-green);
-            font-weight: 500;
-            font-size: 1.1rem;
+        .profession-description {
+            color: var(--text-secondary);
             margin-bottom: 20px;
-            display: block;
+            flex-grow: 1;
         }
 
-        .info-block {
-            margin-bottom: 20px;
+        .profession-details {
+            margin-top: 20px;
         }
 
-        .info-title {
+        .detail-item {
+            margin-bottom: 15px;
+        }
+
+        .detail-title {
             font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .info-content {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .skills-list {
-            list-style: none;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
+            align-items: center;
         }
 
-        .skill-tag {
-            background: var(--gray-light);
-            color: var(--text-secondary);
-            padding: 6px 12px;
-            border-radius: 20px;
+        .detail-title i {
+            margin-right: 8px;
             font-size: 0.9rem;
-            font-weight: 500;
+        }
+
+        .detail-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            background: var(--gray-light);
-            padding: 60px 0;
-            margin-top: 80px;
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            background-color: var(--primary-blue-dark);
+            color: var(--white);
+            padding: 50px 0 30px;
+            margin-top: 50px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
         }
 
         .footer-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--accent-green-light);
         }
 
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0;
-            flex-wrap: wrap;
+            list-style: none;
         }
 
-        .footer-link {
-            color: var(--primary-blue);
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-medium);
             text-decoration: none;
-            font-weight: 500;
             transition: var(--transition);
         }
 
-        .footer-link:hover {
-            color: var(--accent-green);
+        .footer-links a:hover {
+            color: var(--accent-green-light);
+            padding-left: 5px;
         }
 
         .copyright {
-            color: var(--gray-dark);
-            font-size: 0.95rem;
-            margin-top: 30px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-medium);
+            font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
         <span style="color: hsl(var(--primary)); font-weight: 500;">@media</span> (max-width: 992px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
             .professions-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .nav-list {
+                gap: 15px;
+            }
+            
+            .nav-item {
+                min-width: 140px;
             }
         }
 
@@ -311,554 +369,871 @@
                 font-size: 16px;
             }
             
-            h1 {
+            .logo {
                 font-size: 2.2rem;
             }
             
-            h2 {
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
                 font-size: 1.8rem;
-            }
-            
-            h3 {
-                font-size: 1.4rem;
-            }
-            
-            .section-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
-            }
-            
-            .nav-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-tab {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
             }
             
             .professions-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
             
-            .profession-card {
-                padding: 25px;
+            .nav-list {
+                flex-direction: column;
             }
             
-            header {
-                padding: 40px 0;
-                margin-bottom: 40px;
-            }
-            
-            .section {
-                margin-bottom: 60px;
-            }
-        }
-
-        <span style="color: hsl(var(--primary)); font-weight: 500;">@media</span> (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .container {
-                padding: 0 15px;
+            .nav-item {
+                min-width: 100%;
             }
             
             .section-header {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
             }
         }
 
-        /* Scroll to top */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--accent-green);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            z-index: 1000;
+        <span style="color: hsl(var(--primary)); font-weight: 500;">@media</span> (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 40px 0 30px;
+            }
+            
+            .logo {
+                font-size: 1.9rem;
+            }
+            
+            .profession-card {
+                padding: 25px 20px;
+            }
+            
+            .profession-title {
+                font-size: 1.4rem;
+            }
+            
+            .section {
+                margin-bottom: 50px;
+            }
         }
 
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background: var(--accent-green-light);
-            transform: translateY(-3px);
+        /* Print styles */
+        <span style="color: hsl(var(--primary)); font-weight: 500;">@media</span> print {
+            .back-to-top,
+            .nav-container {
+                display: none;
+            }
+            
+            .profession-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
-            <div class="header-content">
-                <h1>IT-профессии: Путеводитель в мир технологий</h1>
-                <p class="subtitle">Навигатор по современным IT-специальностям. Помогаем сделать осознанный выбор карьерного пути в технологиях.</p>
-            </div>
+            <h1 class="logo">IT<span>-</span>Путеводитель</h1>
+            <p class="tagline">Простой и понятный гид по профессиям в IT-сфере. Найди своё призвание в мире технологий.</p>
+            
+            <nav class="nav-container">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#development" class="nav-link">
+                            <i class="fas fa-code nav-icon"></i>
+                            <span>Разработка</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testing" class="nav-link">
+                            <i class="fas fa-bug nav-icon"></i>
+                            <span>Тестирование</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#design" class="nav-link">
+                            <i class="fas fa-palette nav-icon"></i>
+                            <span>Дизайн</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#administration" class="nav-link">
+                            <i class="fas fa-server nav-icon"></i>
+                            <span>Администрирование</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#data" class="nav-link">
+                            <i class="fas fa-chart-line nav-icon"></i>
+                            <span>Работа с данными</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="nav-tabs">
-            <a href="#development" class="nav-tab active">Разработка</a>
-            <a href="#testing" class="nav-tab">Тестирование</a>
-            <a href="#design" class="nav-tab">Дизайн</a>
-            <a href="#administration" class="nav-tab">Администрирование</a>
-            <a href="#data" class="nav-tab">Работа с данными</a>
-        </nav>
-    </div>
-
-    <!-- Main Content -->
     <main class="container">
-        <!-- Development Section -->
+        <!-- Раздел: Разработка -->
         <section id="development" class="section">
             <div class="section-header">
-                <div class="section-icon">💻</div>
-                <h2>Разработка (Создание кода)</h2>
+                <div class="section-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Разработка (Создание кода)</h2>
+                    <p class="section-description">Это люди, которые пишут программы, сайты и приложения. Превращают идеи в работающий код.</p>
+                </div>
             </div>
-            <p class="section-description">Это люди, которые пишут программы, сайты и приложения. Превращают идеи в работающий код.</p>
             
             <div class="professions-grid">
-                <!-- Profession 1 -->
+                <!-- Frontend-разработчик -->
                 <div class="profession-card">
                     <div class="profession-number">1</div>
-                    <h3>Frontend-разработчик</h3>
-                    <span class="profession-role">Визуальная часть сайтов и приложений</span>
+                    <h3 class="profession-title">Frontend-разработчик</h3>
+                    <p class="profession-description">Создаёт внешний вид сайта или приложения. Всё, что вы видите: кнопки, картинки, меню — это его работа.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Создаёт внешний вид сайта или приложения. Всё, что вы видите: кнопки, картинки, меню — это его работа.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Внимательность к деталям (пиксельная точность), усидчивость, базовые знания дизайна.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">HTML</li>
-                            <li class="skill-tag">CSS</li>
-                            <li class="skill-tag">JavaScript</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться в России:</div>
-                        <div class="info-content">НИУ ВШЭ (направление «UX/UI и frontend-разработка»), МФТИ, ТУСУР.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Внимательность к деталям (пиксельная точность), усидчивость, базовые знания дизайна. Нужно знать языки: HTML, CSS, JavaScript.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться в России</div>
+                            <div class="detail-content">НИУ ВШЭ (направление «UX/UI и frontend-разработка»), МФТИ, ТУСУР.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 2 -->
+                
+                <!-- Backend-разработчик -->
                 <div class="profession-card">
                     <div class="profession-number">2</div>
-                    <h3>Backend-разработчик</h3>
-                    <span class="profession-role">Серверная логика и базы данных</span>
+                    <h3 class="profession-title">Backend-разработчик</h3>
+                    <p class="profession-description">Отвечает за «начинку» и мозги сайта. То, как работают поиск, регистрация, корзина покупок — всё это он программирует на сервере.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Отвечает за «начинку» и мозги сайта. То, как работают поиск, регистрация, корзина покупок — всё это он программирует на сервере.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Логическое мышление, умение работать с большими объёмами информации.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">Python</li>
-                            <li class="skill-tag">Java</li>
-                            <li class="skill-tag">PHP</li>
-                            <li class="skill-tag">C#</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">МГТУ им. Баумана, СПбПУ, Университет ИТМО, РГРТУ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Логическое мышление, умение работать с большими объёмами информации. Нужно знать языки: Python, Java, PHP, C#.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МГТУ им. Баумана, СПбПУ, Университет ИТМО, РГРТУ.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 3 -->
+                
+                <!-- Fullstack-разработчик -->
                 <div class="profession-card">
                     <div class="profession-number">3</div>
-                    <h3>Fullstack-разработчик</h3>
-                    <span class="profession-role">Универсальный специалист</span>
+                    <h3 class="profession-title">Fullstack-разработчик</h3>
+                    <p class="profession-description">Мастер на все руки. Умеет и красивую картинку сделать (как фронтенд), и сложную начинку (как бэкенд). Часто работает в стартапах один за всю команду.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Мастер на все руки. Умеет и красивую картинку сделать (как фронтенд), и сложную начинку (как бэкенд). Часто работает в стартапах один за всю команду.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Универсальность, умение быстро переключаться между задачами, широкий кругозор.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">НИУ ВШЭ (Программная инженерия), МТУСИ (Разработка ПО), РЭУ им. Плеханова.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Универсальность, умение быстро переключаться между задачами, широкий кругозор.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">НИУ ВШЭ (Программная инженерия), МТУСИ (Разработка ПО), РЭУ им. Плеханова.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 4 -->
+                
+                <!-- Mobile-разработчик -->
                 <div class="profession-card">
                     <div class="profession-number">4</div>
-                    <h3>Mobile-разработчик</h3>
-                    <span class="profession-role">Приложения для iOS и Android</span>
+                    <h3 class="profession-title">Mobile-разработчик</h3>
+                    <p class="profession-description">Пишет приложения для телефонов (iOS или Android). Следит, чтобы приложение не вылетало и не сажало батарейку.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Пишет приложения для телефонов (iOS или Android). Следит, чтобы приложение не вылетало и не сажало батарейку.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Педантичность, ориентация на результат.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">Kotlin/Java</li>
-                            <li class="skill-tag">Swift</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">Университет ИТМО, МИРЭА, ТУСУР (входит в топы по разработке ПО).</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Педантичность, ориентация на результат. Для Android нужно знать Kotlin/Java, для iOS — Swift.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">Университет ИТМО, МИРЭА, ТУСУР (входит в топы по разработке ПО).</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 5 -->
+                
+                <!-- 1С-разработчик -->
                 <div class="profession-card">
                     <div class="profession-number">5</div>
-                    <h3>1С-разработчик</h3>
-                    <span class="profession-role">Бизнес-программирование</span>
+                    <h3 class="profession-title">1С-разработчик</h3>
+                    <p class="profession-description">Работает в среде «1С:Предприятие». Пишет программы для бухгалтерии, складов и зарплаты на предприятиях. Специализация строго на бизнес-задачах.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Работает в среде «1С:Предприятие». Пишет программы для бухгалтерии, складов и зарплаты на предприятиях. Специализация строго на бизнес-задачах.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Понимание бухгалтерии и бизнес-процессов, усидчивость.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">1С</li>
-                            <li class="skill-tag">SQL</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">РЭУ им. Плеханова, Финансовый университет при Правительстве РФ, ГУУ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Понимание бухгалтерии и бизнес-процессов, усидчивость. Знание языка 1С и запросов SQL.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РЭУ им. Плеханова, Финансовый университет при Правительстве РФ, ГУУ.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 6 -->
+                
+                <!-- Embedded-разработчик -->
                 <div class="profession-card">
                     <div class="profession-number">6</div>
-                    <h3>Embedded-разработчик</h3>
-                    <span class="profession-role">Программирование микросхем</span>
+                    <h3 class="profession-title">Embedded-разработчик</h3>
+                    <p class="profession-description">Программирует микросхемы («железо»). Это умные часы, стиральные машины, автопилоты в машинах. Работает на стыке кода и физики.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Программирует микросхемы («железо»). Это умные часы, стиральные машины, автопилоты в машинах. Работает на стыке кода и физики.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Любовь к электронике и математике, склонность к инженерии.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">C/C++</li>
-                            <li class="skill-tag">Assembler</li>
-                            <li class="skill-tag">Схемотехника</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">МФТИ, МИФИ, МГТУ им. Баумана, РГРТУ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Любовь к электронике и математике, склонность к инженерии. Нужно знание C/C++, Assembler, схемотехники.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МФТИ, МИФИ, МГТУ им. Баумана, РГРТУ.</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Testing Section -->
+        
+        <!-- Раздел: Тестирование -->
         <section id="testing" class="section">
             <div class="section-header">
-                <div class="section-icon">🔍</div>
-                <h2>Тестирование (QA — Контроль качества)</h2>
+                <div class="section-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Тестирование (QA — Контроль качества)</h2>
+                    <p class="section-description">Эти ребята ищут ошибки (баги), чтобы пользователь не ругался на кривое приложение.</p>
+                </div>
             </div>
-            <p class="section-description">Эти ребята ищут ошибки (баги), чтобы пользователь не ругался на кривое приложение.</p>
             
             <div class="professions-grid">
-                <!-- Profession 1 -->
+                <!-- Ручной тестировщик -->
                 <div class="profession-card">
                     <div class="profession-number">1</div>
-                    <h3>Ручной тестировщик</h3>
-                    <span class="profession-role">Manual QA</span>
+                    <h3 class="profession-title">Ручной тестировщик (Manual QA)</h3>
+                    <p class="profession-description">Проверяет программу вручную: нажимает все кнопки, вводит странные символы, ищет, где что сломалось.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Проверяет программу вручную: нажимает все кнопки, вводит странные символы, ищет, где что сломалось.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Внимательность, усидчивость, умение понятно описать ошибку (в баг-репорте). Не нужно знать языки программирования (на старте).</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">НИУ ВШЭ (курс «Обеспечение качества и тестирование»), МТУСИ, РТУ МИРЭА.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Внимательность, усидчивость, умение понятно описать ошибку (в баг-репорте). Не нужно знать языки программирования (на старте).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">НИУ ВШЭ (курс «Обеспечение качества и тестирование»), МТУСИ, РТУ МИРЭА.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 2 -->
+                
+                <!-- Автоматизатор тестирования -->
                 <div class="profession-card">
                     <div class="profession-number">2</div>
-                    <h3>Автоматизатор тестирования</h3>
-                    <span class="profession-role">Automation QA</span>
+                    <h3 class="profession-title">Автоматизатор тестирования (Automation QA)</h3>
+                    <p class="profession-description">Пишет код, который сам проверяет приложение. Нажимает все кнопки за него. Нужен, чтобы не делать скучную работу вручную тысячи раз.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Пишет код, который сам проверяет приложение. Нажимает все кнопки за него. Нужен, чтобы не делать скучную работу вручную тысячи раз.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Навыки программирования, логика, умение писать сложные сценарии.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">Python</li>
-                            <li class="skill-tag">Java</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">Университет ИТМО, МФТИ, РГРТУ (есть специализация по тестированию ПО).</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Навыки программирования (Python, Java), логика, умение писать сложные сценарии.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">Университет ИТМО, МФТИ, РГРТУ (есть специализация по тестированию ПО).</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 3 -->
+                
+                <!-- Инженер по тестированию производительности -->
                 <div class="profession-card">
                     <div class="profession-number">3</div>
-                    <h3>Инженер по тестированию производительности</h3>
-                    <span class="profession-role">Performance Testing</span>
+                    <h3 class="profession-title">Инженер по тестированию производительности</h3>
+                    <p class="profession-description">Проверяет, выдержит ли сайт наплыв людей. Например, если в Черную пятницу зайдут 1000 человек одновременно, всё ли будет работать быстро.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Проверяет, выдержит ли сайт наплыв людей. Например, если в Черную пятницу зайдут 1000 человек одновременно, всё ли будет работать быстро.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Аналитический склад ума, работа с нагрузочными системами (JMeter). Понимание архитектуры сетей.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">МТУСИ (Центр высоконагруженных систем), НИТУ МИСИС.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Аналитический склад ума, работа с нагрузочными системами (JMeter). Понимание архитектуры сетей.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МТУСИ (Центр высоконагруженных систем), НИТУ МИСИС.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 4 -->
+                
+                <!-- Инженер по безопасности -->
                 <div class="profession-card">
                     <div class="profession-number">4</div>
-                    <h3>Инженер по безопасности</h3>
-                    <span class="profession-role">Security QA</span>
+                    <h3 class="profession-title">Инженер по безопасности (Security QA)</h3>
+                    <p class="profession-description">Пытается взломать приложение до того, как это сделают хакеры. Проверяет уязвимости, защиту паролей и платежей.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Пытается взломать приложение до того, как это сделают хакеры. Проверяет уязвимости, защиту паролей и платежей.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Пытливый ум («чувство опасности»), знание принципов хакерских атак, этичный подход (не навреди).</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">МТУСИ (направление «Программная защита информации»), ИТМО, МИФИ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Пытливый ум («чувство опасности»), знание принципов хакерских атак, этичный подход (не навреди).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МТУСИ (направление «Программная защита информации»), ИТМО, МИФИ.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 5 -->
+                
+                <!-- Тестировщик мобильных приложений -->
                 <div class="profession-card">
                     <div class="profession-number">5</div>
-                    <h3>Тестировщик мобильных приложений</h3>
-                    <span class="profession-role">Mobile App Testing</span>
+                    <h3 class="profession-title">Тестировщик мобильных приложений</h3>
+                    <p class="profession-description">Специализируется только на телефонах. Проверяет, как приложение ведёт себя на Android и iOS, что будет, если придет СМС или позвонят во время игры.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Специализируется только на телефонах. Проверяет, как приложение ведёт себя на Android и iOS, что будет, если придет СМС или позвонят во время игры.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Терпение (тестировать на 100 моделях телефонов скучно), знание особенностей разных ОС.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">РГРТУ, ТУСУР, НИУ ВШЭ (школа дизайна).</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Терпение (тестировать на 100 моделях телефонов скучно), знание особенностей разных ОС.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РГРТУ, ТУСУР, НИУ ВШЭ (школа дизайна).</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 6 -->
+                
+                <!-- Тест-аналитик -->
                 <div class="profession-card">
                     <div class="profession-number">6</div>
-                    <h3>Тест-аналитик</h3>
-                    <span class="profession-role">Test Analyst</span>
+                    <h3 class="profession-title">Тест-аналитик</h3>
+                    <p class="profession-description">Не просто ищет баги, а продумывает стратегию проверки. Составляет план: как и что проверять, чтобы не пропустить главного. Это «генерал» в мире тестирования.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Не просто ищет баги, а продумывает стратегию проверки. Составляет план: как и что проверять, чтобы не пропустить главного. Это «генерал» в мире тестирования.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Системное мышление, опыт работы тестировщиком, умение работать с требованиями.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">РЭУ им. Плеханова (аналитика данных), РГРТУ, МТУСИ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Системное мышление, опыт работы тестировщиком, умение работать с требованиями.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РЭУ им. Плеханова (аналитика данных), РГРТУ, МТУСИ.</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Design Section -->
+        
+        <!-- Раздел: Дизайн -->
         <section id="design" class="section">
             <div class="section-header">
-                <div class="section-icon">🎨</div>
-                <h2>Дизайн (Создание внешнего вида и удобства)</h2>
+                <div class="section-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Дизайн (Создание внешнего вида и удобства)</h2>
+                    <p class="section-description">Они делают так, чтобы программа была не только красивой, но и удобной (интуитивно понятной).</p>
+                </div>
             </div>
-            <p class="section-description">Они делают так, чтобы программа была не только красивой, но и удобной (интуитивно понятной).</p>
             
             <div class="professions-grid">
-                <!-- Profession 1 -->
+                <!-- UX/UI-дизайнер -->
                 <div class="profession-card">
                     <div class="profession-number">1</div>
-                    <h3>UX/UI-дизайнер</h3>
-                    <span class="profession-role">Интерфейсы и пользовательский опыт</span>
+                    <h3 class="profession-title">UX/UI-дизайнер</h3>
+                    <p class="profession-description">UX — это удобство (чтобы кнопка «Купить» была под пальцем). UI — это внешний вид (какого цвета кнопка, какой шрифт). Рисует макеты в Figma.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">UX — это удобство (чтобы кнопка «Купить» была под пальцем). UI — это внешний вид (какого цвета кнопка, какой шрифт). Рисует макеты в Figma.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Художественный вкус, эмпатия (понимание другого человека).</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">Figma</li>
-                            <li class="skill-tag">Photoshop</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">Школа дизайна НИУ ВШЭ (Нижний Новгород), РГПУ им. Герцена («Информационные технологии в дизайне»), СПбГУ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Художественный вкус, эмпатия (понимание другого человека), знание программ Figma, Photoshop.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">Школа дизайна НИУ ВШЭ (Нижний Новгород), РГПУ им. Герцена («Информационные технологии в дизайне»), СПбГУ.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 2 -->
+                
+                <!-- Product-дизайнер -->
                 <div class="profession-card">
                     <div class="profession-number">2</div>
-                    <h3>Product-дизайнер</h3>
-                    <span class="profession-role">Цифровой дизайнер</span>
+                    <h3 class="profession-title">Product-дизайнер (Цифровой дизайнер)</h3>
+                    <p class="profession-description">То же, что и UX/UI, но шире. Он продумывает весь продукт от начала до конца: как пользователь идёт к своей цели, рисует иконки, анимацию.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">То же, что и UX/UI, но шире. Он продумывает весь продукт от начала до конца: как пользователь идёт к своей цели, рисует иконки, анимацию.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Умение думать как бизнес и как пользователь, навыки презентации.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">НИУ ВШЭ (Санкт-Петербург, профиль «Дизайн цифрового продукта»), МФТИ, Сколтех.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Умение думать как бизнес и как пользователь, навыки презентации.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">НИУ ВШЭ (Санкт-Петербург, профиль «Дизайн цифрового продукта»), МФТИ, Сколтех.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 3 -->
+                
+                <!-- Web-дизайнер -->
                 <div class="profession-card">
                     <div class="profession-number">3</div>
-                    <h3>Web-дизайнер</h3>
-                    <span class="profession-role">Дизайн сайтов</span>
+                    <h3 class="profession-title">Web-дизайнер</h3>
+                    <p class="profession-description">Рисует именно сайты (лендинги, интернет-магазины). Отвечает за то, чтобы сайт был красивым и продающим.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Рисует именно сайты (лендинги, интернет-магазины). Отвечает за то, чтобы сайт был красивым и продающим.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Чувство композиции, умение работать с типографикой.</div>
-                        <ul class="skills-list">
-                            <li class="skill-tag">Tilda</li>
-                            <li class="skill-tag">Readymag</li>
-                            <li class="skill-tag">HTML/CSS</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">РГПУ им. Герцена (70% практики), Школа дизайна НИУ ВШЭ.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Чувство композиции, умение работать с типографикой. Знание Tilda, Readymag, основ верстки (HTML/CSS — плюс).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РГПУ им. Герцена (70% практики), Школа дизайна НИУ ВШЭ.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 4 -->
+                
+                <!-- Motion-дизайнер -->
                 <div class="profession-card">
                     <div class="profession-number">4</div>
-                    <h3>Motion-дизайнер</h3>
-                    <span class="profession-role">Аниматор</span>
+                    <h3 class="Motion-дизайнер (Аниматор)</h3>
+                    <p class="profession-description">Оживляет картинку. Делает так, чтобы иконки двигались, кнопки красиво нажимались, а на сайте летали шарики.</p>
                     
-                    <div class="info-block">
-                        <div class="info-title">Чем занимается:</div>
-                        <div class="info-content">Оживляет картинку. Делает так, чтобы иконки двигались, кнопки красиво нажимались, а на сайте летали шарики.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Качества и навыки:</div>
-                        <div class="info-content">Чувство ритма и времени, знание программы After Effects, базовые навыки 2D-анимации.</div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <div class="info-title">Где учиться:</div>
-                        <div class="info-content">РГПУ им. Герцена (есть дисциплина «моушн-дизайн»), Школа дизайна НИУ ВШЭ, СПбГУПТД.</div>
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Чувство ритма и времени, знание программы After Effects, базовые навыки 2D-анимации.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РГПУ им. Герцена (есть дисциплина «моушн-дизайн»), Школа дизайна НИУ ВШЭ, СПбГУПТД.</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profession 5 -->
+                
+                <!-- Game Designer -->
                 <div class="profession-card">
-                    <div class="
+                    <div class="profession-number">5</div>
+                    <h3 class="profession-title">Game Designer (Геймдизайнер)</h3>
+                    <p class="profession-description">Придумывает правила игры, баланс (чтобы меч убивал не слишком сильно и не слишком слабо), уровни прохождения.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Богатая фантазия, математический склад ума (для баланса), аналитика. Знание игровых движков (Unity/Unreal).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РГПУ им. Герцена (направление по созданию игр), НИУ ВШЭ, ИТМО.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3D-дизайнер -->
+                <div class="profession-card">
+                    <div class="profession-number">6</div>
+                    <h3 class="profession-title">3D-дизайнер (Визуализатор)</h3>
+                    <p class="profession-description">Создаёт трёхмерные объекты (модели зданий, персонажей, машины). Нужен в играх, кино и архитектуре.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Пространственное мышление, терпение (рендер модели может идти часами). Знание 3D Max, Maya, Blender.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РГПУ им. Герцена (3D-графика, фотограмметрия), СПбГУПТД, МИФИ.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Раздел: Администрирование -->
+        <section id="administration" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Администрирование (Поддержание работы систем)</h2>
+                    <p class="section-description">Специалисты, которые следят, чтобы серверы не упали, а компьютеры сотрудников работали.</p>
+                </div>
+            </div>
+            
+            <div class="professions-grid">
+                <!-- Системный администратор -->
+                <div class="profession-card">
+                    <div class="profession-number">1</div>
+                    <h3 class="profession-title">Системный администратор (Сисадмин)</h3>
+                    <p class="profession-description">Настраивает компьютеры, роутеры, принтеры в офисе. Следит, чтобы у сотрудников был интернет и всё работало.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Стрессоустойчивость (когда у всех всё сломалось), умение гуглить проблемы. Знание Windows/Linux, сетей.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МТУСИ (сетевые технологии), РГРТУ (администрирование сетей), колледжи (например, Ростовский-на-Дону колледж связи).</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DevOps-инженер -->
+                <div class="profession-card">
+                    <div class="profession-number">2</div>
+                    <h3 class="profession-title">DevOps-инженер</h3>
+                    <p class="profession-description">Это крутой сисадмин для разработчиков. Он настраивает процессы, чтобы код разработчика мог быстро и автоматически попасть на сервер и там запуститься.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Любовь к автоматизации, знание Linux, Docker, Kubernetes (специальные программы для упаковки кода).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">НИТУ МИСИС (магистратура DevOps), МТУСИ (инженерия DevSecOps), ТУСУР.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Системный аналитик -->
+                <div class="profession-card">
+                    <div class="profession-number">3</div>
+                    <h3 class="profession-title">Системный аналитик</h3>
+                    <p class="profession-description">Переводчик с языка бизнеса на язык разработчиков. Он слушает, что хочет заказчик, пишет задачу для программистов, проверяет результат.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Коммуникабельность, умение писать чёткую документацию, логика.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РЭУ им. Плеханова, НИУ ВШЭ, РГРТУ.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Сетевой инженер -->
+                <div class="profession-card">
+                    <div class="profession-number">4</div>
+                    <h3 class="profession-title">Сетевой инженер</h3>
+                    <p class="profession-description">Строит и настраивает большие сети (провайдеры интернета, сети крупных заводов). Знает, как передать сигнал из точки А в точку Б.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Понимание физики сигнала, работа с оборудованием Cisco/Huawei, высокая ответственность.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МТУСИ (профильный вуз по связи), СПбГУТ, ТУСУР.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Администратор баз данных -->
+                <div class="profession-card">
+                    <div class="profession-number">5</div>
+                    <h3 class="profession-title">Администратор баз данных (DBA)</h3>
+                    <p class="profession-description">Следит за тем, где хранится информация (базы данных). Настраивает резервное копирование, ускоряет запросы, не даёт базе данных «лечь».</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Аккуратность (потерять базу данных — это катастрофа), знание SQL (языка запросов).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МФТИ (Науки о данных), РЭУ им. Плеханова, МТУСИ (Инженерия данных).</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Специалист по информационной безопасности -->
+                <div class="profession-card">
+                    <div class="profession-number">6</div>
+                    <h3 class="profession-title">Специалист по информационной безопасности (InfoSec)</h3>
+                    <p class="profession-description">Строит защиту компании. Ставит пароли, разграничивает доступ, проверяет сотрудников, чтобы они не открывали письма хакеров.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Паранойя в хорошем смысле (недоверие к окружающим), знание криптографии, законодательства.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МТУСИ (Программная защита информации), МИФИ, ИТМО.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Раздел: Работа с данными -->
+        <section id="data" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Работа с данными (Data Science)</h2>
+                    <p class="section-description">Это аналитики, которые собирают информацию, наводят в ней порядок и ищут закономерности (иногда с помощью нейросетей).</p>
+                </div>
+            </div>
+            
+            <div class="professions-grid">
+                <!-- Аналитик данных -->
+                <div class="profession-card">
+                    <div class="profession-number">1</div>
+                    <h3 class="profession-title">Аналитик данных (Data Analyst)</h3>
+                    <p class="profession-description">Собирает данные (например, продажи за месяц), строит красивые графики (дашборды) и отвечает на вопрос: «Почему упали продажи в пятницу?».</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Пытливый ум, знание Excel, SQL, инструментов визуализации (Tableau, Power BI).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РЭУ им. Плеханова («Аналитика больших данных»), МФТИ (онлайн-магистратура «Науки о данных»), НИУ ВШЭ.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Scientist -->
+                <div class="profession-card">
+                    <div class="profession-number">2</div>
+                    <h3 class="profession-title">Data Scientist (Специалист по Data Science)</h3>
+                    <p class="profession-description">Строит сложные модели. Если Аналитик отвечает «почему было», то Data Scientist предсказывает, что будет. Он создаёт нейросети, алгоритмы рекомендаций (как в ТикТоке).</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Знание высшей математики, Python (библиотеки Pandas, NumPy), машинное обучение.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РЭУ им. Плеханова (кафедра «Форсайт»), МФТИ, ИТМО.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Engineer -->
+                <div class="profession-card">
+                    <div class="profession-number">3</div>
+                    <h3 class="profession-title">Data Engineer (Инженер данных)</h3>
+                    <p class="profession-description">Строит трубы для данных. Data Scientist-ам нужна информация для обучения нейросетей. Инженер данных собирает её из разных мест, чистит и раскладывает по полочкам.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Умение программировать на Python/Scala, знание баз данных, систем Big Data (Spark, Hadoop).</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МФТИ (трек Data Engineering), МТУСИ («Инженерия данных»), НИТУ МИСИС.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Бизнес-аналитик -->
+                <div class="profession-card">
+                    <div class="profession-number">4</div>
+                    <h3 class="profession-title">Бизнес-аналитик</h3>
+                    <p class="profession-description">Смотрит на данные с точки зрения денег и процессов. Понимает, как внедрение новой IT-системы повлияет на прибыль. Больше бизнес, чем IT.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Аналитический склад ума, знание экономики, умение строить графики в Excel или Power BI.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РЭУ им. Плеханова, НИУ ВШЭ (Бизнес-информатика), Финуниверситет.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Системный аналитик данных -->
+                <div class="profession-card">
+                    <div class="profession-number">5</div>
+                    <h3 class="profession-title">Системный аналитик данных</h3>
+                    <p class="profession-description">Смотрит, как устроена сама система хранения данных. Проектирует архитектуру хранилищ. Это связующее звено между инженерами и бизнесом в вопросе данных.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Понимание SQL, умение рисовать схемы (UML), опыт внедрения больших систем.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">РГРТУ (программы для топ-специалистов), НИУ ВШЭ.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ML Engineer -->
+                <div class="profession-card">
+                    <div class="profession-number">6</div>
+                    <h3 class="profession-title">ML Engineer (Инженер машинного обучения)</h3>
+                    <p class="profession-description">Внедряет нейросеть в реальную жизнь. Упаковывает обученную модель Data Scientist-а в приложение или сайт, чтобы она работала без зависаний и быстро отвечала пользователю.</p>
+                    
+                    <div class="profession-details">
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-user-check"></i> Качества и навыки</div>
+                            <div class="detail-content">Знание Python, DevOps (как у админов), оптимизация кода.</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-title"><i class="fas fa-graduation-cap"></i> Где учиться</div>
+                            <div class="detail-content">МФТИ (трек ML Engineer), Университет ИТМО, МТУСИ (Технологии ИИ).</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">IT-Путеводитель</h3>
+                    <p>Простой и понятный гид по профессиям в IT-сфере. Помогаем найти своё призвание в мире технологий.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Разделы</h3>
+                    <ul class="footer-links">
+                        <li><a href="#development">Разработка</a></li>
+                        <li><a href="#testing">Тестирование</a></li>
+                        <li><a href="#design">Дизайн</a></li>
+                        <li><a href="#administration">Администрирование</a></li>
+                        <li><a href="#data">Работа с данными</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Полезные ресурсы</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://mashagpt.ru/blog" target="_blank">Блог о IT-профессиях</a></li>
+                        <li><a href="https://mashagpt.ru/faq" target="_blank">Часто задаваемые вопросы</a></li>
+                        <li><a href="https://mashagpt.ru/payment-policy" target="_blank">Пользовательское соглашение</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 IT-Путеводитель. Все права защищены.</p>
+                <p>Сайт создан с использованием современных веб-технологий.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 30,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active state to navigation links on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Add hover effect to profession cards on mobile
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.profession-card').forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('hover-effect');
+                });
+                
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.classList.remove('hover-effect');
+                    }, 300);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
